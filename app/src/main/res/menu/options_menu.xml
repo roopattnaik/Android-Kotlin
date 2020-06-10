@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".view.ui1.activity.MainActivity"
+    app:startDestination="@id/loginFragment">
+
+    <item
+        android:title="Settings"
+        android:id="@+id/settings"
+        android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/logout"
+        app:showAsAction="never"
+        android:title="Logout">
+    </item>
+    <item
+        android:id="@+id/exit"
+        app:showAsAction="never"
+        android:title="Exit">
+    </item>
+</menu>

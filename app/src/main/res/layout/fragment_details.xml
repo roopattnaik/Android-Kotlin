@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/finalimage"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        tools:src="@tools:sample/avatars"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:longClickable="true"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/genreText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="genre"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/yearText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="year"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/goback"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Go Back" />
+
+    <Button
+        android:id="@+id/additem"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Add item" />
+
+    <Button
+        android:id="@+id/weatherButton"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Get More Information" />
+
+    <TextView
+        android:id="@+id/weatherView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="16sp"/>
+
+</LinearLayout>

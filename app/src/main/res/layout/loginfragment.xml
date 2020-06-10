@@ -1,0 +1,103 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <data>
+
+        <variable
+            name="loginviewModel"
+            type="com.example.loginNav.viewmodel.LoginViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height = "match_parent">
+
+        <TextView android:text = "Login to View"
+            android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textviewbox"
+            android:textSize = "35sp"
+            android:layout_alignParentTop = "true"
+            android:layout_centerHorizontal = "true" />
+
+        <EditText
+            android:id="@+id/emailaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:focusable="true"
+            android:text="@={loginviewModel.emailAddress}"
+            android:hint="Enter Name"
+            android:textColorHint="@color/colorPrimary" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/password"
+            android:text="@={loginviewModel.password}"
+            android:layout_below="@+id/emailaddress"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/emailaddress"
+            android:layout_alignEnd="@+id/emailaddress"
+            android:textColorHint="@color/colorPrimary"
+            android:hint="Password" />
+
+        <TextView
+            android:id="@+id/attempts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="145dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="83dp"
+            android:text="Attempts Left:"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/countervalue"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/attempts"
+            android:layout_alignBottom="@+id/attempts"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="81dp"
+            android:layout_marginRight="81dp"
+            android:layout_marginBottom="-2dp"
+            android:text="5"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/password"
+            android:text="login"
+            android:background="@color/colorPrimary"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:enabled="@{loginviewModel.emailAddress.length() > 0 &amp;&amp; loginviewModel.password.length() > 0}"/>
+
+        <TextView
+            android:id="@+id/textloginview"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/attempts"
+            android:text="Login View model"
+            android:paddingTop="50dp" />
+
+    </RelativeLayout>
+
+</layout>
