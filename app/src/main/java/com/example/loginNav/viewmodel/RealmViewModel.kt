@@ -3,28 +3,26 @@ package com.example.loginNav.viewmodel
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.loginNav.RealmApp
+import com.example.loginNav.RealmApplication
 import com.example.loginNav.manager.RealmManager
 import com.example.loginNav.model.RealmUsers
 
+/*
+View Model for Realm Fragment to add User
+ */
 
 open class RealmViewModel(): ViewModel() {
-
-    init {
-        var myApp: RealmApp =
-            RealmApp()
-    }
 
     val readResult = MutableLiveData<List<RealmUsers>>()
     val writeSuccess = MutableLiveData<Boolean>()
 
     var realmManager=RealmManager()
-    var user_id = ObservableField("")
-    var user_name = ObservableField("")
-    var user_loc = ObservableField("")
+    var userId = ObservableField("")
+    var userName = ObservableField("")
+    var userLoc = ObservableField("")
 
     fun onSave() =
-        writeSuccess.postValue(insertupdateUser(user_id.get()?: user_id.toString(), user_name.get()?:user_name.toString(), user_loc.get()?:user_loc.toString() ))
+        writeSuccess.postValue(insertupdateUser(userId.get()?: userId.toString(), userName.get()?:userName.toString(), userLoc.get()?:userLoc.toString() ))
 
 
     fun insertupdateUser(id: String, name: String, loc: String):Boolean {

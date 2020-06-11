@@ -16,18 +16,17 @@ import com.example.loginNav.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.realm.Realm
 
-
+/*
+Main Activity for the app
+Custom Action barused
+ */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Realm.init(this)
-//        getSupportActionBar()?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        // getSupportActionBar()?.setCustomView(R.layout.custom_toolbar);
         val toolbar: Toolbar = findViewById(R.id.mytoolbar)
         setSupportActionBar(toolbar)
-
     }
 }
 

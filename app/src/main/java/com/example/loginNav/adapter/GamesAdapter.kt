@@ -10,7 +10,11 @@ import com.bumptech.glide.Glide
 import com.example.loginNav.R
 import com.example.loginNav.model.GameList
 
-
+/*
+The adapter the Gamelist fragment
+Contains onClick and onLongClick definitions
+Contains Glide Implementaion
+ */
 class GamesAdapter(private var moviesList: List<GameList>, var listener: Onitemclicklistener, var longclicklistener: OnItemLongClicklistener) :
     RecyclerView.Adapter<GamesAdapter.MyViewHolder>() {
     public class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -56,7 +60,7 @@ class GamesAdapter(private var moviesList: List<GameList>, var listener: Onitemc
         holder.itemView.setOnLongClickListener(object :View.OnLongClickListener {
             override fun onLongClick(v: View?): Boolean {
                 longclicklistener.onLongClick(moviesList[position])
-            return true
+                return true
             }
         })
 
@@ -68,10 +72,16 @@ class GamesAdapter(private var moviesList: List<GameList>, var listener: Onitemc
 
     }
 
+    /*
+    Interface for onClick Item event
+     */
     interface Onitemclicklistener {
         fun onClick(gameList: GameList)
     }
 
+    /*
+     Interface for onLongClick Item event
+     */
     interface OnItemLongClicklistener {
         fun onLongClick(gameList: GameList) {
         }

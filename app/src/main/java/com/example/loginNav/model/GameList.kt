@@ -1,5 +1,9 @@
 package com.example.loginNav.model
 
+/*
+class defination for GameList
+ */
+
  open class GameList (
 
     var image: String,

@@ -4,13 +4,16 @@ import android.app.Application
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
-class RealmApp : Application() {
+/*
+Application class for Realm
+ */
+
+class RealmApplication : Application() {
 
     lateinit var realm: Realm
 
     override fun onCreate() {
         super.onCreate()
-
         initRealm()
 
     }

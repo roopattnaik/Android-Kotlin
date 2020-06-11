@@ -13,8 +13,7 @@ import com.bumptech.glide.Glide
 
 import com.example.loginNav.R
 import com.example.loginNav.model.WeatherResponse
-import com.example.loginNav.network.WeatherService
-import kotlinx.android.synthetic.main.fragment_details.*
+import com.example.loginNav.network.WeatherAPI
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,23 +26,17 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
+ * A simple [Fragment] subclass for Game Details
  * Use the [DetailsFragment.newInstance] factory method to
  * create an instance of this fragment.
+ * Contains Option Menu
+ * Has Retrofit Implemention
  */
 class DetailsFragment : Fragment() {
     private var weatherData: TextView? = null
 
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
         setHasOptionsMenu(true);
     }
 
@@ -52,23 +45,21 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var v: View = inflater.inflate(R.layout.fragment_details, container, false)
-
-        var title: TextView = v.findViewById(R.id.titleText)
-        var genre: TextView = v.findViewById(R.id.genreText)
-        var year: TextView = v.findViewById(R.id.yearText)
-        var imageurl: ImageView = v.findViewById(R.id.finalimage)
-        var gobackButton: Button = v.findViewById(R.id.goback)
-        var addUserButton : Button = v.findViewById(R.id.additem)
-        var weatherButton: Button = v.findViewById(R.id.weatherButton)
-        weatherData= v.findViewById(R.id.weatherView)
-
+        var view: View = inflater.inflate(R.layout.fragment_details, container, false)
+        var title: TextView = view.findViewById(R.id.titleText)
+        var genre: TextView = view.findViewById(R.id.genreText)
+        var year: TextView = view.findViewById(R.id.yearText)
+        var imageurl: ImageView = view.findViewById(R.id.finalimage)
+        var gobackButton: Button = view.findViewById(R.id.goback)
+        var addUserButton : Button = view.findViewById(R.id.additem)
+        var weatherButton: Button = view.findViewById(R.id.weatherButton)
         var bundle: Bundle? = this.arguments
         var gameName: String? = bundle?.getString("title")
         var gameYear: String? = bundle?.getString("year")
         var gameGenre: String? = bundle?.getString("genre")
         var gameImageurl: String? = bundle?.getString("imageurl")
 
+        weatherData= view.findViewById(R.id.weatherView)
         title.text = gameName
         genre.text = gameGenre
         year.text = gameYear
@@ -76,29 +67,24 @@ class DetailsFragment : Fragment() {
 
         gobackButton.setOnClickListener {
             findNavController().popBackStack()
-
         }
-
         addUserButton.setOnClickListener{
             findNavController().navigate(R.id.action_detailsFragment_to_realmFragment)
         }
         weatherButton.setOnClickListener {
-
-            getCurrentData()
+            getCurrentData() //Uses retrofitBuilder to fetch data
         }
         title.setOnLongClickListener{
             Toast.makeText(view?.context,"long press",Toast.LENGTH_SHORT)
             return@setOnLongClickListener true
-
         }
-
-        return v
+        return view
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.options_menu, menu)
 
-            super.onCreateOptionsMenu(menu, inflater)
+        super.onCreateOptionsMenu(menu, inflater)
 
     }
 
@@ -125,13 +111,12 @@ class DetailsFragment : Fragment() {
             .baseUrl(BaseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        val service = retrofit.create(WeatherService::class.java)
-        val call = service.getCurrentWeatherData(lat, lon, AppId)
+        val service = retrofit.create(WeatherAPI::class.java)
+        val call = service.getCurrentWeatherData(lat, lon, AppId) //gets data using Retrofit service call
         call.enqueue(object : Callback<WeatherResponse> {
             override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
                 if (response.code() == 200) {
                     val weatherResponse = response.body()!!
-
                     val stringBuilder = "Country: " +
                             weatherResponse.sys!!.country +
                             "\n" +
@@ -165,13 +150,8 @@ class DetailsFragment : Fragment() {
         var AppId = "2e65127e909e178d0af311a81f39948c"
         var lat = "35"
         var lon = "139"
-
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             DetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
             }
     }
 }

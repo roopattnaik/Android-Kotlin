@@ -4,8 +4,15 @@ package com.example.loginNav.manager
 import io.realm.Realm
 import io.realm.RealmObject
 
+/*
+RealmManager Class with add and store functions
+ */
+
 class RealmManager {
 
+    /*
+    Insert and update data
+     */
     fun <T : RealmObject> add(model: T) {
         val realm = Realm.getDefaultInstance()
         realm.executeTransaction { realm1 ->
@@ -14,6 +21,9 @@ class RealmManager {
         realm.close()
     }
 
+    /*
+    Fetch the data
+     */
     inline fun <reified T : RealmObject> findAll(): List<T> {
         val realm = Realm.getDefaultInstance()
         val list = realm.copyFromRealm(
