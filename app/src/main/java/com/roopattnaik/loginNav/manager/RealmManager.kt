@@ -1,4 +1,4 @@
-package com.example.loginNav.manager
+package com.roopattnaik.loginNav.manager
 
 
 import io.realm.Realm

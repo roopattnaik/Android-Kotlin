@@ -1,11 +1,10 @@
-package com.example.loginNav.viewmodel
+package com.roopattnaik.loginNav.viewmodel
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.loginNav.RealmApplication
-import com.example.loginNav.manager.RealmManager
-import com.example.loginNav.model.RealmUsers
+import com.roopattnaik.loginNav.manager.RealmManager
+import com.roopattnaik.loginNav.model.RealmUsers
 
 /*
 View Model for Realm Fragment to add User

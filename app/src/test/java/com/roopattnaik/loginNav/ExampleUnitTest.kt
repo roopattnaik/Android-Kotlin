@@ -1,4 +1,4 @@
-package com.example.loginNav
+package com.roopattnaik.loginNav
 
 import org.junit.Test
 

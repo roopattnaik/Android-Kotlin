@@ -1,4 +1,4 @@
-package com.example.loginNav.viewmodel
+package com.roopattnaik.loginNav.viewmodel
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData

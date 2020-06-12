@@ -1,4 +1,4 @@
-package com.example.loginNav.view.ui.gamelist
+package com.roopattnaik.loginNav.view.ui.gamelist
 
 import android.os.Bundle
 import android.view.*
@@ -9,11 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.loginNav.R
-import com.example.loginNav.R.*
-import com.example.loginNav.view.ui.DetailsFragment
+import com.roopattnaik.loginNav.R
+import com.roopattnaik.loginNav.R.*
+import com.roopattnaik.loginNav.view.ui.DetailsFragment
 
-import com.example.loginNav.model.GameList
+import com.roopattnaik.loginNav.model.GameList
 
 var bundle: Bundle = Bundle()
 

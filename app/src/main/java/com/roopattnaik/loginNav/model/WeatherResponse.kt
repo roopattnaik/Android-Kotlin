@@ -1,8 +1,6 @@
-package com.example.loginNav.model
+package com.roopattnaik.loginNav.model
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
 import java.util.ArrayList
 

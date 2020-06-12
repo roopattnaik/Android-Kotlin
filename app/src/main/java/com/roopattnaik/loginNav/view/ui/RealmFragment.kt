@@ -1,20 +1,18 @@
-package com.example.loginNav.view.ui
+package com.roopattnaik.loginNav.view.ui
 
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.loginNav.R
+import com.roopattnaik.loginNav.R
 
-import com.example.loginNav.RealmApplication
-import com.example.loginNav.databinding.AddnewitemFragmentBinding
-import com.example.loginNav.model.RealmUsers
-import com.example.loginNav.viewmodel.RealmViewModel
-import io.realm.Realm
+import com.roopattnaik.loginNav.RealmApplication
+import com.roopattnaik.loginNav.databinding.AddnewitemFragmentBinding
+import com.roopattnaik.loginNav.model.RealmUsers
+import com.roopattnaik.loginNav.viewmodel.RealmViewModel
 import kotlinx.android.synthetic.main.addnewitem_fragment.*
 
 /*

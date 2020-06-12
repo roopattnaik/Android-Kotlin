@@ -1,9 +1,8 @@
-package com.example.loginNav.network
+package com.roopattnaik.loginNav.network
 
-import com.example.loginNav.model.WeatherResponse
+import com.roopattnaik.loginNav.model.WeatherResponse
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 /*

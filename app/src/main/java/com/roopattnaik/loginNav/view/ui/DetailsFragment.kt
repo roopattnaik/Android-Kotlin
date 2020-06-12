@@ -1,4 +1,4 @@
-package com.example.loginNav.view.ui
+package com.roopattnaik.loginNav.view.ui
 
 import android.os.Bundle
 import android.view.*
@@ -11,9 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 
 
-import com.example.loginNav.R
-import com.example.loginNav.model.WeatherResponse
-import com.example.loginNav.network.WeatherAPI
+import com.roopattnaik.loginNav.R
+import com.roopattnaik.loginNav.model.WeatherResponse
+import com.roopattnaik.loginNav.network.WeatherAPI
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

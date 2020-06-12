@@ -1,15 +1,12 @@
-package com.example.loginNav.view.ui
+package com.roopattnaik.loginNav.view.ui
 
 import android.annotation.SuppressLint
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -17,10 +14,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
-import com.example.loginNav.R
-import com.example.loginNav.viewmodel.LoginViewModel
+import com.roopattnaik.loginNav.R
+import com.roopattnaik.loginNav.viewmodel.LoginViewModel
 
-import com.example.loginNav.databinding.LoginfragmentBinding
+import com.roopattnaik.loginNav.databinding.LoginfragmentBinding
 import kotlinx.android.synthetic.main.loginfragment.*
 
 

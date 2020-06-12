@@ -1,4 +1,4 @@
-package com.example.loginNav.view.ui.gamelist
+package com.roopattnaik.loginNav.view.ui.gamelist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.loginNav.R
-import com.example.loginNav.model.GameList
+import com.roopattnaik.loginNav.R
+import com.roopattnaik.loginNav.model.GameList
 
 /*
 The adapter the Gamelist fragment

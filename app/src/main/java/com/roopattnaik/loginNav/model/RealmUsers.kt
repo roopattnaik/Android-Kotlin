@@ -1,4 +1,4 @@
-package com.example.loginNav.model
+package com.roopattnaik.loginNav.model
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey

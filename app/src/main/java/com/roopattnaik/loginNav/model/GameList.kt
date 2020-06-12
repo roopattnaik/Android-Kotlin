@@ -1,4 +1,4 @@
-package com.example.loginNav.model
+package com.roopattnaik.loginNav.model
 
 /*
 class defination for GameList

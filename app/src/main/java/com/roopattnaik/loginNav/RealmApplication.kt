@@ -1,4 +1,4 @@
-package com.example.loginNav
+package com.roopattnaik.loginNav
 
 import android.app.Application
 import io.realm.Realm
